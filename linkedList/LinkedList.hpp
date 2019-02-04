@@ -42,7 +42,6 @@ int LinkedList<T>::size() const
 		}
 		else
 		{
-			//cout << "Count is " << count <<", current node is "<<currentNode<< ", Next is " << currentNode->getNext()<<endl;
 			count++;
 			currentNode = currentNode->getNext();
 		}
@@ -53,13 +52,29 @@ template <typename T>
 bool LinkedList<T>::search(T value) const
 {
 	Node<T>* temp = m_front;
-	bool isFound = false;
+	//bool isFound = false;
+	//I want it my way.
+	//This is faster, as it breaks when an instance is found.
 
 	/** TODO
 		Fix this method
 	*/
+	while (true)
+	{
+		if (temp == nullptr)
+		{
+			return(false);
+		}
+		else if (temp->getValue())
+		{
+			return(true);
+		}
+		else
+		{
+			temp = temp->getNext();
+		}
+	}
 
-	return(isFound);
 }
 
 template <typename T>
