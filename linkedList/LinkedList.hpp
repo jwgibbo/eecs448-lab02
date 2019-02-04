@@ -56,16 +56,13 @@ bool LinkedList<T>::search(T value) const
 	//I want it my way.
 	//This is faster, as it breaks when an instance is found.
 
-	/** TODO
-		Fix this method
-	*/
 	while (true)
 	{
 		if (temp == nullptr)
 		{
 			return(false);
 		}
-		else if (temp->getValue())
+		else if (temp->getValue() == value)
 		{
 			return(true);
 		}
