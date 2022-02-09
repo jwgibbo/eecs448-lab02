@@ -1,6 +1,6 @@
 /**
-*	@author 
-*	@date 
+*	@author Ayaan Lakhani
+*	@date 2/8/22
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
@@ -8,7 +8,6 @@
 template <typename T>
 LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 {
-
 }
 
 template <typename T>
@@ -29,9 +28,10 @@ bool LinkedList<T>::isEmpty() const
 template <typename T>
 int LinkedList<T>::size() const
 {
-	/** TODO 
-		Fix this method
-	*/
+	while(!isEmpty())
+	{
+		return m_size;
+	}
 	return(0);
 }
 
@@ -40,11 +40,13 @@ bool LinkedList<T>::search(T value) const
 {
 	Node<T>* temp = m_front;
 	bool isFound = false;
-
-	/** TODO 
-		Fix this method
-	*/
-
+    for(int i = 0; i < m_size; i++)
+	{
+		if(temp->getValue())
+		{
+			isFound = true;
+		}
+	}
 	return(isFound);
 }
 
